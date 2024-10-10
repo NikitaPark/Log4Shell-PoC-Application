@@ -5,15 +5,10 @@ Spring framework based web application for proof of concept for log4shell vulner
 > [!Important]
 > JDK 1.8(8u131 in development) is required to launch this project
 
-There is already an application built with the .jar extension in the 'build/libs/' path, so you don't need to build it.
+Use the provided `Dockerfile` to build and run the Docker image for poc application.
 ```shell
-$ java -jar Log4Shell-PoC-Application/build/libs/Log4Shell-PoC-Application-0.0.1-SNAPSHOT.jar
-```
-You can also edit 'src/main/application.properties' to change the port:   
-(If you change the port, you need to build it again.)
-```text
-# application.properties
-server.port = 8080
+docker build --tag log4shell-poc-application .
+docker run -d -p 8080:8000 --name Log4shell-PoC-Application log4shell-poc-application
 ```
 
 ## Proof of Concept 
